@@ -532,7 +532,6 @@ disp_kms_open(int argc, char **argv)
 				ERROR("invalid arg: %s", argv[i]);
 				goto fail;
 			}
-			disp_kms->bo_flags |= OMAP_BO_SCANOUT;
 		} else {
 			/* ignore */
 			continue;
