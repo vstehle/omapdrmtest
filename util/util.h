@@ -26,8 +26,7 @@
 #include <unistd.h>
 #include <assert.h>
 
-#include <omap_drm.h>
-#include <omap_drmif.h>
+#include <radeon_drm.h>
 
 /* align x to next highest multiple of 2^n */
 #define ALIGN2(x,n)   (((x) + ((1 << (n)) - 1)) & ~((1 << (n)) - 1))
@@ -51,7 +50,7 @@ typedef enum {
 struct buffer {
 	uint32_t fourcc, width, height;
 	int nbo;
-	struct omap_bo *bo[4];
+//	struct omap_bo *bo[4];
 	uint32_t pitches[4];
 	struct list unlocked;
 };
@@ -59,7 +58,7 @@ struct buffer {
 struct display {
 	int fd;
 	uint32_t width, height;
-	struct omap_device *dev;
+//	struct omap_device *dev;
 	struct list unlocked;
 
 	struct buffer ** (*get_buffers)(struct display *disp, uint32_t n);

@@ -23,8 +23,8 @@
 
 #include <drm.h>
 
-void disp_kms_usage(void);
-struct display * disp_kms_open(int argc, char **argv);
+//void disp_kms_usage(void);
+//struct display * disp_kms_open(int argc, char **argv);
 
 #ifdef HAVE_X11
 void disp_x11_usage(void);
@@ -37,7 +37,7 @@ disp_usage(void)
 #ifdef HAVE_X11
 	disp_x11_usage();
 #endif
-	disp_kms_usage();
+//	disp_kms_usage();
 }
 
 struct display *
@@ -51,7 +51,8 @@ disp_open(int argc, char **argv)
 		return disp;
 #endif
 
-	disp = disp_kms_open(argc, argv);
+//	disp = disp_kms_open(argc, argv);
+	disp = NULL;
 
 	if (!disp) {
 		ERROR("unable to create display");
@@ -91,8 +92,9 @@ disp_get_vid_buffer(struct display *disp)
 		/* barrier.. if we are using GPU blitting, we need to make sure
 		 * that the GPU is finished:
 		 */
-		omap_bo_cpu_prep(buf->bo[0], OMAP_GEM_WRITE);
-		omap_bo_cpu_fini(buf->bo[0], OMAP_GEM_WRITE);
+//		omap_bo_cpu_prep(buf->bo[0], OMAP_GEM_WRITE);
+//		omap_bo_cpu_fini(buf->bo[0], OMAP_GEM_WRITE);
+#warning TODO!
 	}
 	return buf;
 }
@@ -207,6 +209,9 @@ fill422(unsigned char *virtual, int n, int width, int height, int stride)
 void
 fill(struct buffer *buf, int n)
 {
+#warning TODO!
+
+#if 0
 	int i;
 
 	for (i = 0; i < buf->nbo; i++)
@@ -250,4 +255,5 @@ fill(struct buffer *buf, int n)
 
 	for (i = 0; i < buf->nbo; i++)
 		omap_bo_cpu_fini(buf->bo[i], OMAP_GEM_WRITE);
+#endif
 }

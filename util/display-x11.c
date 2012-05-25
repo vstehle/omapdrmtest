@@ -110,7 +110,8 @@ get_vid_buffers(struct display *disp, uint32_t n,
 		buf->height = h;
 
 		for (j = 0; dri2bufs[i].names[j]; j++) {
-			buf->bo[j] = omap_bo_from_name(disp->dev, dri2bufs[i].names[j]);
+#warning FIXME!
+//			buf->bo[j] = omap_bo_from_name(disp->dev, dri2bufs[i].names[j]);
 			buf->pitches[j] = dri2bufs[i].pitch[j];
 		}
 
@@ -294,11 +295,12 @@ disp_x11_open(int argc, char **argv)
 
 	disp->fd = global_fd;
 
-	disp->dev = omap_device_new(disp->fd);
-	if (!disp->dev) {
-		ERROR("couldn't create device");
-		goto no_x11_free;
-	}
+#warning TODO!
+//	disp->dev = omap_device_new(disp->fd);
+//	if (!disp->dev) {
+//		ERROR("couldn't create device");
+//		goto no_x11_free;
+//	}
 
 	disp->get_buffers = get_buffers;
 	disp->get_vid_buffers = get_vid_buffers;

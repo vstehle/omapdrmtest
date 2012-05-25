@@ -18,7 +18,6 @@
 noinst_LTLIBRARIES = libutil.la
 
 libutil_la_SOURCES = \
-	display-kms.c \
 	util.c
 
 if ENABLE_X11
