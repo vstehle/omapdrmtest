@@ -30,6 +30,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <xf86drm.h>
 
 static int global_fd = 0;
 
@@ -144,7 +145,7 @@ post_vid_buffer(struct display *disp, struct buffer *buf,
 
 	DRI2SwapBuffersVid(disp_x11->dpy, disp_x11->win, 0, 0, 0, &count,
 			buf_x11->dri2buf->attachment, &b);
-	MSG("DRI2SwapBuffersVid[%u]: count=%llu",
+	MSG("DRI2SwapBuffersVid[%u]: count=%lu",
 			buf_x11->dri2buf->attachment, count);
 
 	return 0;
