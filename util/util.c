@@ -36,7 +36,7 @@ void
 disp_usage(void)
 {
 	MSG("Generic Display options:");
-	MSG("\t--fps <fps>: force playback rate (0 means \"do not force\")");
+	MSG("\t--fps <fps>\tforce playback rate (0 means \"do not force\")");
 
 #ifdef HAVE_X11
 	disp_x11_usage();
@@ -154,7 +154,7 @@ static void maintain_playback_rate(struct rate_control *p)
 	if (usecs_to_sleep >= 1000000)
 		usecs_to_sleep = 999999;
 
-	/* We filter a bit our rate adaptation, to avoid being to "choppy".
+	/* We filter a bit our rate adaptation, to avoid being too "choppy".
 	 * Adjust the "alpha" value as needed. */
 	p->usecs_to_sleep = ((67 * p->usecs_to_sleep) + (33 * usecs_to_sleep)) / 100;
 
