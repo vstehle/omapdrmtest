@@ -120,13 +120,6 @@ out:
 	return disp;
 }
 
-void disp_close(struct display *disp)
-{
-#ifdef HAVE_X11
-	disp_x11_close(disp);
-#endif
-}
-
 struct buffer **
 disp_get_vid_buffers(struct display *disp, uint32_t n,
 		uint32_t fourcc, uint32_t w, uint32_t h)
