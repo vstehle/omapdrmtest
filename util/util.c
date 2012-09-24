@@ -32,7 +32,6 @@ struct display * disp_kms_open(int argc, char **argv);
 #ifdef HAVE_X11
 void disp_x11_usage(void);
 struct display * disp_x11_open(int argc, char **argv);
-void disp_x11_close(struct display *disp);
 #endif
 
 void
