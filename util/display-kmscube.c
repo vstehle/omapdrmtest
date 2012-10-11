@@ -565,35 +565,35 @@ static void draw(struct display_kmscube *disp_kmsc)
 
 	static const GLfloat vTexUVs[] = {
 			// front
-			0.0f,  1.0f,
-			1.0f,  1.0f,
-			0.0f,  0.0f,
-			1.0f,  0.0f,
+			0.1f,  0.9f,
+			0.9f,  0.9f,
+			0.1f,  0.1f,
+			0.9f,  0.1f,
 			// back
-			0.0f,  1.0f,
-			1.0f,  1.0f,
-			0.0f,  0.0f,
-			1.0f,  0.0f,
+			0.1f,  0.9f,
+			0.9f,  0.9f,
+			0.1f,  0.1f,
+			0.9f,  0.1f,
 			// right
-			0.0f,  1.0f,
-			1.0f,  1.0f,
-			0.0f,  0.0f,
-			1.0f,  0.0f,
+			0.1f,  0.9f,
+			0.9f,  0.9f,
+			0.1f,  0.1f,
+			0.9f,  0.1f,
 			// left
-			0.0f,  1.0f,
-			1.0f,  1.0f,
-			0.0f,  0.0f,
-			1.0f,  0.0f,
+			0.1f,  0.9f,
+			0.9f,  0.9f,
+			0.1f,  0.1f,
+			0.9f,  0.1f,
 			// top
-			0.0f,  1.0f,
-			1.0f,  1.0f,
-			0.0f,  0.0f,
-			1.0f,  0.0f,
+			0.1f,  0.9f,
+			0.9f,  0.9f,
+			0.1f,  0.1f,
+			0.9f,  0.1f,
 			// bottom
-			0.0f,  1.0f,
-			1.0f,  1.0f,
-			0.0f,  0.0f,
-			1.0f,  0.0f,
+			0.1f,  0.9f,
+			0.9f,  0.9f,
+			0.1f,  0.1f,
+			0.9f,  0.1f,
 	};
 
 	/* clear the color buffer */
